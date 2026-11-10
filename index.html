@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Create a beautiful marriage biodata in Hindi, English or Gujarati and download it as PDF for free.">
+<title>Shaadi Bio Maker | Free Marriage Biodata Maker</title>
+<style>
+:root{--ink:#292333;--muted:#746c7c;--brand:#8b3153;--brand2:#c06b78;--paper:#fffdfb;--line:#eadfe2;--bg:#f7f2f3}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Noto Sans Devanagari","Noto Sans Gujarati",Arial,sans-serif}
+header{background:linear-gradient(120deg,#51243f,#9a4562 65%,#c37b7c);color:#fff;padding:25px max(18px,calc((100% - 1180px)/2));}
+.head{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.logo{font-size:23px;font-weight:850;letter-spacing:.2px}.logo span{color:#ffd9b7}.head p{margin:5px 0 0;color:#f8e9ee;font-size:13px}.pill{border:1px solid #ffffff70;padding:8px 13px;border-radius:30px;font-size:12px}
+.wrap{max-width:1180px;margin:24px auto;padding:0 16px 50px}.intro{margin:0 0 18px}.intro h1{font-size:clamp(25px,4vw,34px);margin:0 0 6px}.intro p{color:var(--muted);margin:0}
+.layout{display:grid;grid-template-columns:minmax(300px,440px) minmax(0,1fr);gap:20px;align-items:start}
+.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:19px;box-shadow:0 8px 30px #4320330a}.panel h2{font-size:18px;margin:0 0 15px}.section-title{font-weight:800;margin:18px 0 10px;padding-bottom:7px;border-bottom:1px solid var(--line);color:var(--brand)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px}.field{margin-bottom:11px}.field label{display:block;font-size:12px;font-weight:750;color:#5d5360;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;border:1px solid #dfd4d9;border-radius:9px;padding:10px 11px;font:inherit;font-size:13px;background:#fff;color:var(--ink);outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--brand);box-shadow:0 0 0 3px #8b315315}.field textarea{min-height:65px;resize:vertical}.hint{font-size:11px;color:var(--muted);margin-top:4px}
+.upload{border:1px dashed #cbaeb9;border-radius:12px;padding:12px;background:#fff9fb}.upload input{border:0;padding:4px 0}.photo-note{font-size:11px;color:var(--muted)}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.btn{border:0;border-radius:10px;padding:11px 15px;font-weight:800;font-size:13px;cursor:pointer}.primary{background:var(--brand);color:#fff}.secondary{background:#f5e9ee;color:var(--brand)}.dark{background:#292333;color:#fff}.btn:hover{filter:brightness(.96);transform:translateY(-1px)}
+.template-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.template-head h2{margin:0}.count{font-size:12px;color:var(--muted)}.templates{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:13px 0 18px}
+.tpl{border:1px solid var(--line);border-radius:10px;background:#fff;padding:7px 5px;cursor:pointer;text-align:center;min-width:0}.tpl.active{outline:2px solid var(--brand);border-color:var(--brand);background:#fff8fa}.swatch{height:37px;border-radius:6px;margin-bottom:5px;background:linear-gradient(135deg,var(--a),var(--b));position:relative;overflow:hidden}.swatch:before{content:"";position:absolute;inset:6px;border:1px solid #ffffffa8;border-radius:3px}.tpl b{display:block;font-size:10px}.tpl small{font-size:9px;color:var(--muted)}
+.preview-wrap{background:#eee6e8;border-radius:14px;padding:14px;overflow:auto}.preview-toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:8px}.preview-toolbar strong{font-size:13px}.preview-toolbar span{font-size:11px;color:var(--muted)}
+#paper{width:100%;max-width:595px;min-height:842px;margin:0 auto;background:#fff;box-shadow:0 4px 18px #34202a20;position:relative;overflow:hidden;padding:34px 38px;color:#302a30}
+.bio-top{text-align:center;border-bottom:2px solid var(--accent);padding:4px 0 17px;margin-bottom:16px}.bio-title{font-family:Georgia,serif;font-size:27px;color:var(--accent);font-weight:bold;letter-spacing:1px}.bio-sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#81747a;margin-top:4px}
+.bio-photo{width:104px;height:120px;object-fit:cover;border:3px solid var(--accent);padding:3px;border-radius:8px;background:#fff}.hero{display:flex;align-items:center;justify-content:center;gap:18px;margin:0 0 16px}.hero.center{flex-direction:column;gap:9px}.person-name{font-family:Georgia,serif;font-size:22px;color:var(--accent);font-weight:bold}.person-meta{font-size:11px;color:#786d73;margin-top:4px}.bio-section{margin:13px 0}.bio-section h3{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:5px;margin:0 0 7px}.bio-table{display:grid;grid-template-columns:37% 63%;font-size:11px;line-height:1.5}.bio-row{display:contents}.bio-label,.bio-value{padding:3px 5px;border-bottom:1px solid #eee8eb;overflow-wrap:anywhere}.bio-label{font-weight:700;color:#71646c}.bio-value{color:#302a30}.bio-about{font-size:11px;line-height:1.65;white-space:pre-wrap}.bio-footer{margin-top:18px;text-align:center;font-size:10px;color:#85767e}
+#paper.theme-1{--accent:#9b3f59;background:#fffdfb}#paper.theme-2{--accent:#9b6b24;background:#fffdf7}#paper.theme-3{--accent:#345b7b;background:#fbfdff}#paper.theme-4{--accent:#52775d;background:#fbfffc}#paper.theme-5{--accent:#8b5484;background:#fffbff}#paper.theme-6{--accent:#a33d35;background:#fffafa}
+#paper.theme-1 .bio-top{border-bottom-style:double;border-bottom-width:4px}#paper.theme-2 .bio-top{border:1px solid var(--accent);padding:12px}#paper.theme-3 .bio-top{border-bottom-style:dashed}#paper.theme-4 .bio-top{border-bottom-width:1px}#paper.theme-5 .bio-top{border-bottom-style:dotted}#paper.theme-6 .bio-top{border-top:3px solid var(--accent);padding-top:12px}
+#paper.theme-2 .bio-photo{border-radius:50%;width:110px;height:110px}#paper.theme-3 .bio-photo{border-radius:2px}#paper.theme-4 .bio-photo{border-radius:18px}#paper.theme-5 .bio-photo{border-radius:50%}#paper.theme-6 .bio-photo{border-radius:0}
+footer{text-align:center;color:#887d83;font-size:11px;padding:18px}
+.notice{background:#fff7e9;border:1px solid #f0d9a9;color:#74531d;padding:10px 12px;border-radius:10px;font-size:12px;margin:12px 0}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.templates{grid-template-columns:repeat(5,minmax(0,1fr))}#paper{min-height:780px}}
+@media(max-width:480px){.grid2{grid-template-columns:1fr}.templates{grid-template-columns:repeat(3,minmax(0,1fr))}.panel{padding:14px}.wrap{padding-left:10px;padding-right:10px}#paper{padding:25px 20px;min-height:700px}.bio-title{font-size:22px}}
+@page{size:A4;margin:0}
+@media print{body{background:#fff}.no-print,header,.intro,footer,.panel:first-child,.template-head,.templates,.preview-toolbar,.notice{display:none!important}.wrap{margin:0;padding:0;max-width:none}.layout{display:block}.panel{border:0;padding:0;box-shadow:none}.preview-wrap{padding:0;background:#fff;border-radius:0;overflow:visible}#paper{width:210mm;max-width:none;min-height:297mm;height:297mm;margin:0;box-shadow:none;padding:15mm 16mm;print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+
+/* 30 distinct layout treatments */
+#paper{isolation:isolate}
+#paper:before{content:"";position:absolute;inset:12px;border:1px solid var(--accent);opacity:.18;pointer-events:none;z-index:-1}
+#paper:after{content:"";position:absolute;left:0;top:0;width:100%;height:7px;background:var(--accent);opacity:.9;pointer-events:none;z-index:0}
+#paper .bio-top,#paper .hero,#paper #bioSections,#paper .bio-footer{position:relative;z-index:1}
+#paper .bio-top{position:relative}
+#paper .bio-top:after{content:"✦  ✧  ✦";display:block;color:var(--accent);font-size:12px;letter-spacing:8px;margin-top:8px;opacity:.7}
+#paper .bio-section{break-inside:avoid}
+#paper .bio-section h3{padding:6px 9px;background:color-mix(in srgb,var(--accent) 9%,white);border-left:3px solid var(--accent);border-bottom:0;border-radius:3px}
+#paper .bio-photo{flex-shrink:0}
+#paper .bio-table{border:1px solid color-mix(in srgb,var(--accent) 16%,white);border-radius:5px;overflow:hidden}
+#paper .bio-label,#paper .bio-value{padding:5px 7px}
+#paper .bio-row:nth-child(4n+1) .bio-label,#paper .bio-row:nth-child(4n+1) .bio-value{background:#faf7f8}
+
+/* 01 Classic centered */
+#paper.layout-1 .bio-top{text-align:center}.layout-1 .hero{flex-direction:column;text-align:center}.layout-1 .bio-photo{border-radius:50%;width:112px;height:112px}
+#paper.layout-1:before{inset:17px;border:3px double var(--accent);opacity:.55}
+/* 02 Royal certificate */
+#paper.layout-2{padding-top:43px}.layout-2 .bio-top{border:3px double var(--accent);padding:14px;margin-bottom:20px}.layout-2 .bio-top:after{content:"❖  ROYAL BIODATA  ❖";letter-spacing:3px}.layout-2 .hero{flex-direction:row-reverse}
+#paper.layout-2:before{inset:9px;border:5px ridge var(--accent);opacity:.45}
+/* 03 Left aligned editorial */
+#paper.layout-3 .bio-top{text-align:left;border-bottom:1px solid var(--accent)}.layout-3 .bio-top:after{content:"PERSONAL PROFILE  /  MATRIMONY";letter-spacing:2px}.layout-3 .hero{justify-content:flex-start}.layout-3 .bio-photo{border-radius:3px;width:92px;height:116px}
+/* 04 Green botanical */
+#paper.layout-4:before{inset:18px;border:1px solid var(--accent);border-radius:28px;opacity:.5}.layout-4 .bio-top{border:0}.layout-4 .bio-top:after{content:"❧  ❀  ❧";font-size:23px;letter-spacing:10px}.layout-4 .bio-photo{border-radius:50%;outline:5px solid #fff;box-shadow:0 0 0 2px var(--accent)}
+/* 05 Lavender card */
+#paper.layout-5 .bio-top{background:#f5edf7;border:0;border-radius:12px;padding:15px}.layout-5 .hero{flex-direction:row-reverse;justify-content:space-between}.layout-5 .bio-photo{border-radius:18px}
+/* 06 Crimson top banner */
+#paper.layout-6 .bio-top{background:var(--accent);color:white;margin:-34px -38px 20px;padding:27px 20px 17px;border:0}.layout-6 .bio-title,.layout-6 .bio-sub{color:white}.layout-6 .bio-top:after{color:white}.layout-6 .hero{justify-content:flex-start}
+/* 07 Teal split profile */
+#paper.layout-7 .hero{justify-content:flex-start;background:#edf7f6;padding:12px;border-radius:10px}.layout-7 .bio-photo{width:86px;height:108px;border-radius:8px}.layout-7 .bio-top{text-align:left}
+/* 08 Maroon classic frame */
+#paper.layout-8:before{inset:15px;border:7px double var(--accent);opacity:.5}.layout-8 .bio-top{margin:0 12px 20px}.layout-8 .hero{flex-direction:column;text-align:center}.layout-8 .bio-photo{border-radius:4px}
+/* 09 Navy two-column feel */
+#paper.layout-9 .bio-top{text-align:left}.layout-9 .hero{justify-content:flex-start}.layout-9 .bio-section h3{background:var(--accent);color:white;border:0;border-radius:0}.layout-9 .bio-table{grid-template-columns:42% 58%}
+/* 10 Blush portrait card */
+#paper.layout-10 .hero{flex-direction:column;text-align:center;background:#fff1f5;padding:15px;border-radius:14px}.layout-10 .bio-photo{width:118px;height:138px;border-radius:60px 60px 12px 12px}.layout-10 .bio-top:after{content:"♡  MADE FOR A NEW BEGINNING  ♡"}
+/* 11 Royal side stripe */
+#paper.layout-11:after{width:10px;height:100%;top:0;left:0}.layout-11 .bio-top{text-align:left;padding-left:12px}.layout-11 .hero{justify-content:flex-start}.layout-11 .bio-photo{border-radius:50%}
+/* 12 Minimal monochrome */
+#paper.layout-12:before{display:none}#paper.layout-12:after{height:3px}.layout-12 .bio-top{text-align:left;border:0}.layout-12 .bio-top:after{content:"";display:none}.layout-12 .bio-section h3{background:transparent;border-left:0;border-bottom:1px solid var(--accent);padding-left:0}.layout-12 .bio-table{border:0}.layout-12 .bio-label,.layout-12 .bio-value{background:transparent!important}
+/* 13 Floral double frame */
+#paper.layout-13:before{inset:13px;border:2px dotted var(--accent);border-radius:18px;opacity:.55}.layout-13 .bio-top:after{content:"❀  ❀  ❀";font-size:20px}.layout-13 .hero{flex-direction:row-reverse}.layout-13 .bio-photo{border-radius:50%}
+/* 14 Gujarati heritage */
+#paper.layout-14 .bio-top{border:1px solid var(--accent);border-bottom:5px double var(--accent);padding:13px}.layout-14 .bio-top:after{content:"ૐ  શુભ મંગલ  ૐ";letter-spacing:3px}.layout-14 .hero{justify-content:flex-start}.layout-14 .bio-photo{border-radius:4px}
+/* 15 Gold medallion */
+#paper.layout-15 .hero{flex-direction:column;text-align:center}.layout-15 .bio-photo{border-radius:50%;width:120px;height:120px;border-width:5px}.layout-15 .bio-top:after{content:"✧  ✦  ✧";font-size:20px}
+/* 16 Beige modern blocks */
+#paper.layout-16 .bio-top{background:#f4eee4;padding:15px;border:0;text-align:left}.layout-16 .hero{justify-content:flex-start}.layout-16 .bio-section h3{border-radius:20px;background:#f4eee4;border:0}
+/* 17 Emerald offset */
+#paper.layout-17 .bio-top{text-align:right;border-bottom:3px solid var(--accent)}.layout-17 .hero{flex-direction:row-reverse;justify-content:space-between}.layout-17 .bio-photo{border-radius:12px 12px 40px 12px}
+/* 18 Lotus stacked */
+#paper.layout-18 .bio-top:after{content:"❀ LOTUS ❀";font-size:15px}.layout-18 .hero{flex-direction:column;text-align:center}.layout-18 .bio-photo{border-radius:50% 50% 8px 8px}
+/* 19 Burgundy newspaper */
+#paper.layout-19 .bio-top{border-top:5px double var(--accent);border-bottom:5px double var(--accent);padding:12px}.layout-19 .bio-top:after{content:"EST. WITH LOVE  •  FAMILY  •  VALUES";letter-spacing:1px}.layout-19 .hero{justify-content:flex-start}.layout-19 .bio-photo{width:82px;height:104px;border-radius:0}
+/* 20 Sky blue clean */
+#paper.layout-20 .bio-top{text-align:left;border:0;background:#edf5fb;padding:15px}.layout-20 .bio-top:after{content:"PROFILE  |  FAMILY  |  FUTURE";letter-spacing:2px}.layout-20 .hero{justify-content:flex-start}.layout-20 .bio-section h3{border-left:0;border-bottom:2px solid var(--accent);background:transparent}
+/* 21 Ivory pearl */
+#paper.layout-21:before{inset:20px;border:1px solid #c8b98e;opacity:.7}.layout-21 .bio-top:after{content:"◈  PEARL COLLECTION  ◈"}.layout-21 .hero{flex-direction:column;text-align:center}.layout-21 .bio-photo{border-radius:50%;box-shadow:0 0 0 5px #f4ecd9}
+/* 22 Wedding red ribbon */
+#paper.layout-22 .bio-top{background:var(--accent);color:#fff;padding:17px;margin:0 -38px 18px;border:0}.layout-22 .bio-title,.layout-22 .bio-sub{color:white}.layout-22 .bio-top:after{content:"♥  शुभ विवाह  ♥";color:white}.layout-22 .hero{justify-content:flex-start}
+/* 23 Pastel asymmetry */
+#paper.layout-23 .bio-top{text-align:left;border:0;padding-left:20px}.layout-23 .bio-top:before{content:"";position:absolute;left:0;top:0;width:7px;height:100%;background:var(--accent)}.layout-23 .hero{flex-direction:row-reverse;justify-content:space-between}.layout-23 .bio-photo{border-radius:20px 4px 20px 4px}
+/* 24 Heritage green */
+#paper.layout-24:before{inset:12px;border:4px double var(--accent);opacity:.5}.layout-24 .bio-top{border:0}.layout-24 .bio-top:after{content:"❧ FAMILY • TRADITION • TOGETHERNESS ❧";letter-spacing:1px}.layout-24 .hero{justify-content:flex-start}
+/* 25 Silver editorial */
+#paper.layout-25:before{display:none}#paper.layout-25:after{height:2px}.layout-25 .bio-top{text-align:left;border:0}.layout-25 .bio-top:after{content:"MARRIAGE PROFILE";letter-spacing:4px}.layout-25 .hero{justify-content:flex-start}.layout-25 .bio-photo{filter:grayscale(.15);border:1px solid var(--accent);padding:2px}
+/* 26 Temple arch */
+#paper.layout-26 .bio-top{border:2px solid var(--accent);border-radius:90px 90px 5px 5px;padding:22px 12px 12px}.layout-26 .bio-top:after{content:"ॐ  श्री गणेशाय नमः  ॐ";letter-spacing:2px}.layout-26 .hero{flex-direction:column;text-align:center}.layout-26 .bio-photo{border-radius:50% 50% 5px 5px}
+/* 27 Lilac modern */
+#paper.layout-27 .bio-top{text-align:right;border:0;background:#f4eff8;padding:15px}.layout-27 .bio-top:after{content:"A NEW CHAPTER BEGINS";letter-spacing:3px}.layout-27 .hero{flex-direction:row-reverse;justify-content:flex-start}.layout-27 .bio-photo{border-radius:14px}
+/* 28 Cream simple */
+#paper.layout-28:before{inset:18px;border:1px solid #d9cbb5;opacity:.8}.layout-28 .bio-top{border:0}.layout-28 .bio-top:after{content:"—  WITH BEST WISHES  —";letter-spacing:2px}.layout-28 .hero{flex-direction:column;text-align:center}.layout-28 .bio-photo{border-radius:6px}
+/* 29 Peacock ornate */
+#paper.layout-29:before{inset:11px;border:3px double var(--accent);border-radius:25px;opacity:.55}.layout-29 .bio-top:after{content:"🦚  शुभ मंगल  🦚";font-size:17px}.layout-29 .hero{flex-direction:row-reverse}.layout-29 .bio-photo{border-radius:50%;width:112px;height:112px}
+/* 30 Simple elegant */
+#paper.layout-30:before{display:none}#paper.layout-30:after{height:6px}.layout-30 .bio-top{text-align:center;border:0}.layout-30 .bio-top:after{content:"A PROFILE OF LOVE & VALUES";letter-spacing:2px}.layout-30 .hero{justify-content:center;flex-direction:row}.layout-30 .bio-photo{border-radius:8px;width:90px;height:112px}
+@media print{
+#paper.layout-6 .bio-top,#paper.layout-22 .bio-top{margin-left:-16mm;margin-right:-16mm}
+}
+
+
+.templates .swatch.mini{height:58px;padding:5px;background:linear-gradient(135deg,var(--b),#fff);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:3px}
+.templates .swatch.mini:before{inset:3px;border:1px solid var(--a);opacity:.5}
+.templates .swatch.mini i{display:block;width:45%;height:7px;background:var(--a);border-radius:2px;margin-top:2px;z-index:1}
+.templates .swatch.mini em{display:block;width:12px;height:14px;background:var(--a);border:2px solid white;border-radius:50%;z-index:1}
+.templates .swatch.mini small{display:block;width:68%;height:12px;border-top:1px solid var(--a);border-bottom:1px solid var(--a);z-index:1}
+.templates .swatch.mini.l2{border:3px double var(--a)}.templates .swatch.mini.l3{align-items:flex-start}.templates .swatch.mini.l3 em{margin-left:8px}
+.templates .swatch.mini.l4{border-radius:15px}.templates .swatch.mini.l5 em{border-radius:3px;width:16px}
+.templates .swatch.mini.l6{background:linear-gradient(var(--a) 0 38%,#fff 38%)}.templates .swatch.mini.l6 i{background:white}
+.templates .swatch.mini.l7{align-items:flex-start}.templates .swatch.mini.l7 em{margin-left:8px}
+.templates .swatch.mini.l8{border:4px double var(--a)}.templates .swatch.mini.l9 i{align-self:flex-start;margin-left:8px}
+.templates .swatch.mini.l10 em{border-radius:50% 50% 3px 3px;width:15px;height:18px}
+.templates .swatch.mini.l11:after{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--a)}
+.templates .swatch.mini.l12{background:#fff}.templates .swatch.mini.l12:before{display:none}
+.templates .swatch.mini.l13{border:2px dotted var(--a);border-radius:10px}.templates .swatch.mini.l14 i{height:10px;border:1px solid var(--a);background:transparent}
+.templates .swatch.mini.l15 em{width:18px;height:18px}.templates .swatch.mini.l16{align-items:flex-start}.templates .swatch.mini.l16 i{width:60%;height:10px}
+.templates .swatch.mini.l17{align-items:flex-end}.templates .swatch.mini.l17 em{margin-right:8px}
+.templates .swatch.mini.l18 em{border-radius:50% 50% 0 0}.templates .swatch.mini.l19{border-top:4px double var(--a);border-bottom:4px double var(--a)}
+.templates .swatch.mini.l20{align-items:flex-start}.templates .swatch.mini.l20 i{width:75%}
+.templates .swatch.mini.l21{border:1px solid #b9a56e;border-radius:8px}.templates .swatch.mini.l22{background:linear-gradient(var(--a) 0 35%,#fff 35%)}
+.templates .swatch.mini.l23 em{order:-1}.templates .swatch.mini.l24{border:3px double var(--a);border-radius:12px}
+.templates .swatch.mini.l25:before{display:none}.templates .swatch.mini.l26{border-radius:50% 50% 3px 3px}
+.templates .swatch.mini.l27{align-items:flex-end}.templates .swatch.mini.l27 i{width:55%}
+.templates .swatch.mini.l28{border:1px solid #c9b99e}.templates .swatch.mini.l29{border:3px double var(--a);border-radius:15px}
+.templates .swatch.mini.l30{background:linear-gradient(180deg,var(--a),#fff 18%)}
+
+</style>
+</head>
+<body>
+<header><div class="head"><div><div class="logo">✦ Shaadi <span>Bio Maker</span></div><p>Create a beautiful marriage biodata in minutes</p></div><div class="pill">30 FREE DESIGNS · PDF DOWNLOAD</div></div></header>
+<main class="wrap">
+  <div class="intro"><h1>Create Your Marriage Biodata</h1><p>Fill in your details, choose a design and download your A4 biodata as PDF. Your information stays in this browser.</p></div>
+  <div class="layout">
+    <section class="panel no-print">
+      <h2>Enter Your Details</h2>
+      <div class="field"><label for="lang">Biodata language</label><select id="lang"><option value="en">English</option><option value="hi">हिन्दी</option><option value="gu">ગુજરાતી</option></select></div>
+      <div class="field"><label for="photo">Profile photo (required)</label><div class="upload"><input id="photo" type="file" accept="image/*" required><div class="photo-note">Choose a clear JPG, PNG or WebP photo. Photo is required to download.</div></div></div>
+      <div class="section-title">Personal Information</div>
+      <div class="grid2">
+        <div class="field"><label>Name *</label><input id="name" placeholder="Full name"></div>
+        <div class="field"><label>Gender</label><select id="gender"><option>Male</option><option>Female</option><option>Other</option></select></div>
+        <div class="field"><label>Date of birth</label><input id="dob" type="date"></div>
+        <div class="field"><label>Height</label><input id="height" placeholder="e.g. 5 ft 7 in"></div>
+        <div class="field"><label>Religion</label><input id="religion" placeholder="Religion"></div>
+        <div class="field"><label>Caste / Community</label><input id="caste" placeholder="Community"></div>
+        <div class="field"><label>Mother tongue</label><input id="tongue" placeholder="Language"></div>
+        <div class="field"><label>Marital status</label><select id="marital"><option>Never Married</option><option>Divorced</option><option>Widowed</option></select></div>
+        <div class="field"><label>City</label><input id="city" placeholder="City, State"></div>
+        <div class="field"><label>Nationality</label><input id="nationality" placeholder="Indian"></div>
+      </div>
+      <div class="section-title">Education & Career</div>
+      <div class="grid2">
+        <div class="field"><label>Education</label><input id="education" placeholder="Degree / Qualification"></div>
+        <div class="field"><label>Occupation</label><input id="occupation" placeholder="Job / Business"></div>
+        <div class="field"><label>Company</label><input id="company" placeholder="Company name"></div>
+        <div class="field"><label>Annual income</label><input id="income" placeholder="e.g. ₹6–8 LPA"></div>
+      </div>
+      <div class="section-title">Family Details</div>
+      <div class="grid2">
+        <div class="field"><label>Father's name</label><input id="father" placeholder="Father's name"></div>
+        <div class="field"><label>Father's occupation</label><input id="fatherJob" placeholder="Occupation"></div>
+        <div class="field"><label>Mother's name</label><input id="mother" placeholder="Mother's name"></div>
+        <div class="field"><label>Mother's occupation</label><input id="motherJob" placeholder="Occupation"></div>
+        <div class="field"><label>Brothers</label><input id="brothers" placeholder="e.g. 1 (married)"></div>
+        <div class="field"><label>Sisters</label><input id="sisters" placeholder="e.g. 1 (unmarried)"></div>
+        <div class="field"><label>Family type</label><select id="familyType"><option>Nuclear</option><option>Joint</option></select></div>
+        <div class="field"><label>Family location</label><input id="familyCity" placeholder="Native place"></div>
+      </div>
+      <div class="section-title">About & Contact</div>
+      <div class="field"><label>About me / hobbies</label><textarea id="about" placeholder="Write a few lines about yourself, interests and values..."></textarea></div>
+      <div class="grid2">
+        <div class="field"><label>Contact number *</label><input id="phone" type="tel" placeholder="Mobile number"></div>
+        <div class="field"><label>Email (optional)</label><input id="email" type="email" placeholder="Email address"></div>
+      </div>
+      <div class="field"><label>Address (optional)</label><textarea id="address" placeholder="Full address"></textarea></div>
+      <div class="actions"><button class="btn primary" id="updateBtn">Update Preview</button><button class="btn secondary" id="clearBtn" type="button">Clear Form</button></div>
+      <div class="notice">Privacy: This demo creates the biodata locally in your browser. Do not enter information you do not want displayed on the PDF.</div>
+    </section>
+    <section class="panel">
+      <div class="template-head"><h2>Choose Your Template</h2><span class="count">30 designs · Select any one</span></div>
+      <div class="templates" id="templates"></div>
+      <div class="preview-toolbar"><strong>Live Biodata Preview</strong><span>A4 page · PDF ready</span></div>
+      <div class="preview-wrap"><article id="paper" class="theme-1">
+        <div class="bio-top"><div class="bio-title">MARRIAGE BIODATA</div><div class="bio-sub">A beautiful beginning</div></div>
+        <div class="hero center"><img class="bio-photo" id="previewPhoto" alt="Profile photo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='140'%3E%3Crect width='100%25' height='100%25' fill='%23f4e9ed'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%238b3153' font-size='12'%3EYour Photo%3C/text%3E%3C/svg%3E"><div><div class="person-name" id="p-name">Your Full Name</div><div class="person-meta" id="p-meta">Personal details will appear here</div></div></div>
+        <div id="bioSections"></div><div class="bio-footer" id="p-footer">Made with Shaadi Bio Maker</div>
+      </article></div>
+      <div class="actions no-print" style="justify-content:center"><button class="btn primary" id="pdfBtn">⬇ Download PDF / Print</button><button class="btn dark" id="shareBtn">Share Website</button></div>
+      <p class="hint no-print" style="text-align:center">Choose “Save as PDF” in the print window. For best results, enable “Background graphics”.</p>
+    </section>
+  </div>
+</main>
+<footer>DEVLOPER BY JAGDISH TAYADE</footer>
+<footer>© 2026 Shaadi Bio Maker · Free marriage biodata creator</footer>
+<script>
+const $=id=>document.getElementById(id);
+let photoData="", selected=1;
+const palette=[["Classic Rose","#9b3f59","#f7dfe5"],["Royal Gold","#9b6b24","#f4e6c9"],["Ocean Blue","#345b7b","#dceaf4"],["Sage Garden","#52775d","#e0eee2"],["Lavender Love","#8b5484","#eee0f0"],["Crimson Wedding","#a33d35","#f5dddd"],["Peacock Teal","#237a78","#d8eeee"],["Maroon Heritage","#702b43","#efd9df"],["Midnight Navy","#263b63","#dce3f1"],["Blush Pink","#b65e79","#f8e2e9"]];
+const names=["Classic Rose","Royal Gold","Ocean Blue","Sage Garden","Lavender Love","Crimson Wedding","Peacock Teal","Maroon Heritage","Midnight Navy","Blush Pink","Royal Frame","Minimal Chic","Floral Grace","Gujarati Classic","Traditional Gold","Modern Beige","Elegant Emerald","Lotus Pink","Regal Burgundy","Sky Blue","Ivory Pearl","Wedding Red","Pastel Dream","Heritage Green","Silver Grey","Temple Border","Modern Lilac","Classic Cream","Royal Peacock","Simple Elegant"];
+function renderTemplates(){const box=$("templates");box.innerHTML="";names.forEach((n,i)=>{let c=palette[i%palette.length];let b=document.createElement("button");b.type="button";b.className="tpl"+(selected===i+1?" active":"");b.innerHTML=`<div class="swatch mini l${i+1}" style="--a:${c[1]};--b:${c[2]}"><i></i><em></em><small></small></div><b>${String(i+1).padStart(2,"0")}. ${n}</b><small>Layout ${String(i+1).padStart(2,"0")}</small>`;b.onclick=()=>{selected=i+1;renderTemplates();applyTheme()};box.appendChild(b)})}
+function applyTheme(){const p=$("paper");let c=palette[(selected-1)%palette.length];p.className="theme-"+((selected-1)%6+1)+" layout-"+selected;p.style.setProperty("--accent",c[1]);p.style.background=selected%3===0?"#fbfdff":selected%3===1?"#fffdfb":"#fffdf8";}
+const labels={en:{personal:"Personal Information",career:"Education & Career",family:"Family Details",about:"About Me",contact:"Contact Details",name:"Name",gender:"Gender",dob:"Date of Birth",height:"Height",religion:"Religion",caste:"Caste / Community",tongue:"Mother Tongue",marital:"Marital Status",city:"Current City",nationality:"Nationality",education:"Education",occupation:"Occupation",company:"Company",income:"Annual Income",father:"Father's Name",fatherJob:"Father's Occupation",mother:"Mother's Name",motherJob:"Mother's Occupation",brothers:"Brothers",sisters:"Sisters",familyType:"Family Type",familyCity:"Family Location",phone:"Contact Number",email:"Email",address:"Address",aboutText:"About Me / Hobbies"},
+hi:{personal:"व्यक्तिगत जानकारी",career:"शिक्षा और करियर",family:"पारिवारिक जानकारी",about:"मेरे बारे में",contact:"संपर्क जानकारी",name:"नाम",gender:"लिंग",dob:"जन्म तिथि",height:"कद",religion:"धर्म",caste:"जाति / समुदाय",tongue:"मातृभाषा",marital:"वैवाहिक स्थिति",city:"वर्तमान शहर",nationality:"राष्ट्रीयता",education:"शिक्षा",occupation:"व्यवसाय",company:"कंपनी",income:"वार्षिक आय",father:"पिता का नाम",fatherJob:"पिता का व्यवसाय",mother:"माता का नाम",motherJob:"माता का व्यवसाय",brothers:"भाई",sisters:"बहनें",familyType:"परिवार का प्रकार",familyCity:"मूल स्थान",phone:"संपर्क नंबर",email:"ईमेल",address:"पता",aboutText:"मेरे बारे में / शौक"},
+gu:{personal:"વ્યક્તિગત માહિતી",career:"શિક્ષણ અને કારકિર્દી",family:"કૌટુંબિક વિગતો",about:"મારા વિશે",contact:"સંપર્ક વિગતો",name:"નામ",gender:"લિંગ",dob:"જન્મ તારીખ",height:"ઊંચાઈ",religion:"ધર્મ",caste:"જ્ઞાતિ / સમાજ",tongue:"માતૃભાષા",marital:"વૈવાહિક સ્થિતિ",city:"વર્તમાન શહેર",nationality:"રાષ્ટ્રીયતા",education:"શિક્ષણ",occupation:"વ્યવસાય",company:"કંપની",income:"વાર્ષિક આવક",father:"પિતાનું નામ",fatherJob:"પિતાનો વ્યવસાય",mother:"માતાનું નામ",motherJob:"માતાનો વ્યવસાય",brothers:"ભાઈઓ",sisters:"બહેનો",familyType:"પરિવારનો પ્રકાર",familyCity:"મૂળ વતન",phone:"સંપર્ક નંબર",email:"ઈમેલ",address:"સરનામું",aboutText:"મારા વિશે / શોખ"}};
+const fields={personal:["name","gender","dob","height","religion","caste","tongue","marital","city","nationality"],career:["education","occupation","company","income"],family:["father","fatherJob","mother","motherJob","brothers","sisters","familyType","familyCity"],contact:["phone","email","address"]};
+function val(id){return $(id).value.trim()}
+function dateFormat(v){if(!v)return "";let d=new Date(v+"T00:00:00");return isNaN(d)?"":d.toLocaleDateString("en-IN")}
+function makeSection(title,ids,L){let rows=ids.map(id=>{let v=val(id);if(!v)return "";if(id==="dob")v=dateFormat(v);return `<div class="bio-row"><div class="bio-label">${L[id]}</div><div class="bio-value">${escapeHtml(v)}</div></div>`}).join("");return rows?`<section class="bio-section"><h3>${title}</h3><div class="bio-table">${rows}</div></section>`:""}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function update(){const lang=labels[$("lang").value];let n=val("name")||lang.name;$("p-name").textContent=n;$("p-meta").textContent=[val("city"),val("education"),val("occupation")].filter(Boolean).join(" • ")||"Your personal profile";let gender=val("gender");let title=$("lang").value==="hi"?"विवाह परिचय":$("lang").value==="gu"?"લગ્ન બાયોડેટા":"MARRIAGE BIODATA";$("paper").querySelector(".bio-title").textContent=title;$("paper").querySelector(".bio-sub").textContent=$("lang").value==="hi"?"एक सुंदर नई शुरुआत":$("lang").value==="gu"?"એક સુંદર નવી શરૂઆત":"A beautiful beginning";
+let out=makeSection(lang.personal,fields.personal,lang)+makeSection(lang.career,fields.career,lang)+makeSection(lang.family,fields.family,lang);
+if(val("about"))out+=`<section class="bio-section"><h3>${lang.about}</h3><div class="bio-about">${escapeHtml(val("about"))}</div></section>`;
+out+=makeSection(lang.contact,fields.contact,lang);$("bioSections").innerHTML=out;$("p-footer").textContent="Created with Shaadi Bio Maker";
+}
+function checkRequired(){if(!photoData){alert("Please upload a profile photo first.");$("photo").focus();return false}if(!val("name")){alert("Please enter your name.");$("name").focus();return false}if(!val("phone")){alert("Please enter your contact number.");$("phone").focus();return false}return true}
+$("photo").addEventListener("change",e=>{const f=e.target.files[0];if(!f)return;if(!f.type.startsWith("image/")){alert("Please choose an image file.");return}if(f.size>5*1024*1024){alert("Please choose a photo smaller than 5 MB.");e.target.value="";return}const reader=new FileReader();reader.onload=()=>{photoData=reader.result;$("previewPhoto").src=photoData};reader.readAsDataURL(f)});
+$("updateBtn").onclick=update;$("lang").onchange=update;
+$("pdfBtn").onclick=()=>{update();if(!checkRequired())return;window.print()};
+$("clearBtn").onclick=()=>{if(!confirm("Clear all entered details and photo?"))return;document.querySelectorAll("input:not([type=file]),textarea").forEach(x=>x.value="");$("photo").value="";photoData="";$("previewPhoto").src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='140'%3E%3Crect width='100%25' height='100%25' fill='%23f4e9ed'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%238b3153' font-size='12'%3EYour Photo%3C/text%3E%3C/svg%3E";update()};
+$("shareBtn").onclick=async()=>{try{await navigator.clipboard.writeText(location.href);alert("Website link copied!")}catch(e){alert("Copy the website URL from your browser address bar.")}};
+document.querySelectorAll("input,textarea,select").forEach(el=>{if(el.id!=="photo"&&el.id!=="lang")el.addEventListener("input",update);if(el.tagName==="SELECT"&&el.id!=="lang")el.addEventListener("change",update)});
+renderTemplates();applyTheme();update();
+</script>
+</body>
+</html>
